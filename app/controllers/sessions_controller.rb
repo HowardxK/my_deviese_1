@@ -11,4 +11,9 @@ class SessionsController < ApplicationController
       redirect_to '/login', notice: '登入失敗'
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to '/'
+  end
 end
