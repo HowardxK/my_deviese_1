@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to '/', notice: '註冊成功'
     else
-      redirect_to '/signup'
+      redirect_to '/signup', noitce: '註冊失敗'
     end
   end
 
